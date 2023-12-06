@@ -1,0 +1,2416 @@
+{
+  "form": {
+    "labelCol": 6,
+    "wrapperCol": 12,
+    "style": {
+      "margin": "0px 0px 0px 0px",
+      "padding": "0px 0px 0px 0px",
+      "width": "auto",
+      "height": "auto"
+    },
+    "labelAlign": "right",
+    "wrapperAlign": "left",
+    "labelWidth": "100px"
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "yvdu9rvizss": {
+        "type": "boolean",
+        "title": "是否到达现场",
+        "x-decorator": "FormItem",
+        "x-component": "Switch",
+        "x-validator": [],
+        "x-component-props": {},
+        "x-decorator-props": {
+          "labelWidth": "200px"
+        },
+        "x-designable-id": "yvdu9rvizss",
+        "x-index": 0
+      },
+      "rtplv5qf517": {
+        "type": "void",
+        "x-component": "Card",
+        "x-component-props": {
+          "title": "Title"
+        },
+        "x-designable-id": "rtplv5qf517",
+        "x-index": 1,
+        "x-reactions": {
+          "dependencies": [
+            {
+              "property": "value",
+              "type": "boolean",
+              "source": "yvdu9rvizss",
+              "name": "v_gdaatb2ltl2"
+            }
+          ],
+          "fulfill": {
+            "state": {
+              "visible": "{{$deps.v_gdaatb2ltl2 === true}}"
+            }
+          }
+        },
+        "properties": {
+          "l09gu2rg18n": {
+            "type": "Array<object>",
+            "title": "上传现场信息",
+            "x-decorator": "FormItem",
+            "x-component": "Upload",
+            "x-component-props": {
+              "textContent": "文件上传"
+            },
+            "x-validator": [],
+            "x-decorator-props": {},
+            "x-designable-id": "l09gu2rg18n",
+            "x-index": 0
+          },
+          "wkdsclhjx4r": {
+            "type": "void",
+            "x-component": "Card",
+            "x-component-props": {
+              "title": "ISF 锅炉房打卡点"
+            },
+            "x-designable-id": "wkdsclhjx4r",
+            "x-index": 1,
+            "properties": {
+              "dl2vekqz75o": {
+                "type": "string | number",
+                "title": "1号锅炉是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": "3"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "dl2vekqz75o",
+                "x-index": 0
+              },
+              "8ro2z8uuonv": {
+                "type": "string",
+                "title": "运行锅炉排烟温度",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": "number",
+                "x-component-props": {
+                  "addonAfter": "℃",
+                  "placeholder": "小于110℃"
+                },
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "string | number",
+                      "source": "rtplv5qf517.wkdsclhjx4r.dl2vekqz75o",
+                      "name": "v_sis8srnofvv"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.v_sis8srnofvv === 2}}"
+                    }
+                  }
+                },
+                "description": "",
+                "x-designable-id": "8ro2z8uuonv",
+                "x-index": 1
+              },
+              "5u66dgiz25d": {
+                "type": "string | number",
+                "title": "2号锅炉是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": "3"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "5u66dgiz25d",
+                "x-index": 2
+              },
+              "poj20ogjnsr": {
+                "type": "string",
+                "title": "运行锅炉排烟温度",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": "number",
+                "x-component-props": {
+                  "addonAfter": "℃",
+                  "placeholder": "小于110℃"
+                },
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "string | number",
+                      "source": "rtplv5qf517.wkdsclhjx4r.5u66dgiz25d",
+                      "name": "v_na0ywkhvvdh"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.v_na0ywkhvvdh === 2}}"
+                    }
+                  }
+                },
+                "x-designable-id": "poj20ogjnsr",
+                "x-index": 3
+              },
+              "1yuqim0sox6": {
+                "type": "string | number",
+                "title": "3号锅炉是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": "3"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "1yuqim0sox6",
+                "x-index": 4
+              },
+              "copmbj8lftz": {
+                "type": "string",
+                "title": "运行锅炉排烟温度",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": "number",
+                "x-component-props": {
+                  "addonAfter": "℃",
+                  "placeholder": "小于110℃"
+                },
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "string | number",
+                      "source": "rtplv5qf517.wkdsclhjx4r.1yuqim0sox6",
+                      "name": "v_fvifscyjeev"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.v_fvifscyjeev === 2}}"
+                    }
+                  }
+                },
+                "x-designable-id": "copmbj8lftz",
+                "x-index": 5
+              },
+              "z6luycivy2z": {
+                "type": "string",
+                "title": "一次水温度",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {
+                  "addonAfter": "℃",
+                  "placeholder": "50-70℃"
+                },
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "x-designable-id": "z6luycivy2z",
+                "x-index": 6
+              },
+              "n12kvjarbpw": {
+                "type": "string",
+                "title": "二次水温度",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [
+                  {}
+                ],
+                "x-component-props": {
+                  "addonAfter": "℃",
+                  "placeholder": "35-50℃"
+                },
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "x-designable-id": "n12kvjarbpw",
+                "x-index": 7
+              },
+              "9wp75m492m0": {
+                "type": "string",
+                "title": "一次供水压力",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {
+                  "addonAfter": "MPa",
+                  "placeholder": "0.3-0.6 MPa"
+                },
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "x-designable-id": "9wp75m492m0",
+                "x-index": 8
+              },
+              "yb7cqetwtd4": {
+                "type": "string | number",
+                "title": "1号一次泵是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": "3"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "yb7cqetwtd4",
+                "x-index": 9
+              },
+              "8x3i0hlsi50": {
+                "type": "string | number",
+                "title": "2号一次泵是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": "3"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "8x3i0hlsi50",
+                "x-index": 10
+              },
+              "nesd40i5wzg": {
+                "type": "string | number",
+                "title": "3号一次泵是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": "3"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "nesd40i5wzg",
+                "x-index": 11
+              },
+              "676ti5vje99": {
+                "type": "string | number",
+                "title": "4号一次泵是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": "3"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "676ti5vje99",
+                "x-index": 12
+              },
+              "i95f6y0hpel": {
+                "type": "string",
+                "title": "二次供水压力",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {
+                  "addonAfter": "MPa",
+                  "placeholder": "0.3-0.5 MPa"
+                },
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "x-designable-id": "i95f6y0hpel",
+                "x-index": 13
+              },
+              "389cfixel79": {
+                "type": "string | number",
+                "title": "1号二次泵是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": "3"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "389cfixel79",
+                "x-index": 14
+              },
+              "x22o6yo2qd2": {
+                "type": "string | number",
+                "title": "2号二次泵是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": "3"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "x22o6yo2qd2",
+                "x-index": 15
+              },
+              "t8w2aopxw5k": {
+                "type": "string | number",
+                "title": "3号二次泵是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": "3"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "t8w2aopxw5k",
+                "x-index": 16
+              },
+              "3dzakfl0zlo": {
+                "type": "string | number",
+                "title": "4号二次泵是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": "3"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "3dzakfl0zlo",
+                "x-index": 17
+              },
+              "qc1tb7a3mx9": {
+                "type": "string | number",
+                "title": "燃烧机报警状态",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "有",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "无",
+                    "value": 2
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "qc1tb7a3mx9",
+                "x-index": 18
+              },
+              "2ag0u10vl1e": {
+                "type": "string | number",
+                "title": "有无异响",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "有",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "无",
+                    "value": 2
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "2ag0u10vl1e",
+                "x-index": 19
+              },
+              "i01t8s06xuw": {
+                "type": "string | number",
+                "title": "排污一次",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "正常",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "异常",
+                    "value": 2
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "default": 1,
+                "x-designable-id": "i01t8s06xuw",
+                "x-index": 20
+              },
+              "rn4c64qg57m": {
+                "type": "string",
+                "title": "现场5S",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {},
+                "x-designable-id": "rn4c64qg57m",
+                "x-index": 21
+              }
+            }
+          },
+          "4suvstcreov": {
+            "type": "void",
+            "x-component": "Card",
+            "x-component-props": {
+              "title": "ISF供油站打卡点"
+            },
+            "x-designable-id": "4suvstcreov",
+            "x-index": 2,
+            "properties": {
+              "ahtql0jfetn": {
+                "type": "string",
+                "title": "供油压力",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {
+                  "addonAfter": "MPa",
+                  "placeholder": "0.3-0.4 MPa"
+                },
+                "x-decorator-props": {},
+                "required": true,
+                "x-designable-id": "ahtql0jfetn",
+                "x-index": 0
+              },
+              "0kpm785iqcb": {
+                "type": "string | number",
+                "title": "1号气动隔膜泵运行状态",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": "3"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "180px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "0kpm785iqcb",
+                "x-index": 1
+              },
+              "n8yf3h6eje4": {
+                "type": "string | number",
+                "title": "1号气动隔膜泵运行状态",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": "3"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "180px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "n8yf3h6eje4",
+                "x-index": 2
+              },
+              "13rcrw57xa6": {
+                "type": "string",
+                "title": "供回油真空度",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {
+                  "placeholder": "小于0"
+                },
+                "x-decorator-props": {
+                  "labelWidth": "120px"
+                },
+                "required": true,
+                "x-designable-id": "13rcrw57xa6",
+                "x-index": 3
+              },
+              "uo9vk1dijx5": {
+                "type": "string",
+                "title": "现场5S",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {},
+                "x-designable-id": "uo9vk1dijx5",
+                "x-index": 4
+              }
+            }
+          },
+          "two61earqac": {
+            "type": "void",
+            "x-component": "Card",
+            "x-component-props": {
+              "title": "ISF 1号空压机打卡点"
+            },
+            "x-designable-id": "two61earqac",
+            "x-index": 3,
+            "properties": {
+              "d8tffs1njie": {
+                "type": "string | number",
+                "title": "机组是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": 3
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "120px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "d8tffs1njie",
+                "x-index": 0
+              },
+              "euu2vjkjbgq": {
+                "type": "void",
+                "x-component": "FormGrid",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "string | number",
+                      "source": "rtplv5qf517.two61earqac.d8tffs1njie",
+                      "name": "v_9n2ls3pg1qk"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.v_9n2ls3pg1qk === 2}}"
+                    }
+                  }
+                },
+                "x-designable-id": "euu2vjkjbgq",
+                "x-index": 1,
+                "properties": {
+                  "sckbkegjp7z": {
+                    "type": "void",
+                    "x-component": "FormGrid.GridColumn",
+                    "x-validator": [],
+                    "x-component-props": {},
+                    "x-designable-id": "sckbkegjp7z",
+                    "x-index": 0,
+                    "properties": {
+                      "9i4w45qwv0s": {
+                        "type": "string",
+                        "title": "主机温度",
+                        "x-decorator": "FormItem",
+                        "x-component": "Input",
+                        "x-validator": [],
+                        "x-component-props": {
+                          "addonAfter": "℃",
+                          "placeholder": "80-93 ℃ "
+                        },
+                        "x-decorator-props": {},
+                        "required": true,
+                        "x-reactions": {
+                          "dependencies": [
+                            {
+                              "property": "value",
+                              "type": "any"
+                            }
+                          ],
+                          "fulfill": {
+                            "state": {}
+                          }
+                        },
+                        "x-designable-id": "9i4w45qwv0s",
+                        "x-index": 0
+                      },
+                      "de7fodlpz8s": {
+                        "type": "string",
+                        "title": "排气压力",
+                        "x-decorator": "FormItem",
+                        "x-component": "Input",
+                        "x-validator": [],
+                        "x-component-props": {
+                          "addonAfter": "BAR",
+                          "placeholder": "6.3-7.3 BAR"
+                        },
+                        "x-decorator-props": {},
+                        "required": true,
+                        "x-reactions": {
+                          "dependencies": [
+                            {
+                              "property": "value",
+                              "type": "any"
+                            }
+                          ],
+                          "fulfill": {
+                            "state": {}
+                          }
+                        },
+                        "x-designable-id": "de7fodlpz8s",
+                        "x-index": 1
+                      },
+                      "zggmzzn38zc": {
+                        "type": "string | number",
+                        "title": "有无异响",
+                        "x-decorator": "FormItem",
+                        "x-component": "Radio.Group",
+                        "enum": [
+                          {
+                            "children": [],
+                            "label": "有",
+                            "value": 1
+                          },
+                          {
+                            "children": [],
+                            "label": "无",
+                            "value": 2
+                          }
+                        ],
+                        "x-validator": [],
+                        "x-component-props": {},
+                        "x-decorator-props": {},
+                        "required": true,
+                        "default": 2,
+                        "x-reactions": {
+                          "dependencies": [
+                            {
+                              "property": "value",
+                              "type": "any"
+                            }
+                          ],
+                          "fulfill": {
+                            "state": {
+                              "visible": "{{$deps.v_rhel9e6g7ml2 === 2}}"
+                            }
+                          }
+                        },
+                        "x-designable-id": "zggmzzn38zc",
+                        "x-index": 2
+                      }
+                    }
+                  }
+                }
+              },
+              "vx3pwtoau5n": {
+                "type": "string",
+                "title": "现场5S",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {},
+                "x-designable-id": "vx3pwtoau5n",
+                "x-index": 2
+              }
+            }
+          },
+          "xw0eae14idi": {
+            "type": "void",
+            "x-component": "Card",
+            "x-component-props": {
+              "title": "ISF 2号空压机打卡点"
+            },
+            "x-designable-id": "xw0eae14idi",
+            "x-index": 4,
+            "properties": {
+              "bo5ecnxjvwu": {
+                "type": "string | number",
+                "title": "机组是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": "3"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "120px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "bo5ecnxjvwu",
+                "x-index": 0
+              },
+              "bvmq1o104t6": {
+                "type": "void",
+                "x-component": "FormGrid",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "string | number",
+                      "source": "rtplv5qf517.xw0eae14idi.bo5ecnxjvwu",
+                      "name": "v_jalz4ng054i"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.v_jalz4ng054i === 2}}"
+                    }
+                  }
+                },
+                "x-designable-id": "bvmq1o104t6",
+                "x-index": 1,
+                "properties": {
+                  "p73uy03luqa": {
+                    "type": "void",
+                    "x-component": "FormGrid.GridColumn",
+                    "x-validator": [],
+                    "x-component-props": {},
+                    "x-designable-id": "p73uy03luqa",
+                    "x-index": 0,
+                    "properties": {
+                      "g0pmhuw3yg0": {
+                        "type": "string",
+                        "title": "主机温度",
+                        "x-decorator": "FormItem",
+                        "x-component": "Input",
+                        "x-validator": [],
+                        "x-component-props": {
+                          "addonAfter": "℃",
+                          "placeholder": "80-93 ℃ "
+                        },
+                        "x-decorator-props": {},
+                        "required": true,
+                        "x-reactions": {
+                          "dependencies": [
+                            {
+                              "property": "value",
+                              "type": "any"
+                            }
+                          ],
+                          "fulfill": {
+                            "state": {
+                              "visible": "{{$deps.v_btiw31p5pqi4 === 2}}"
+                            }
+                          }
+                        },
+                        "x-designable-id": "g0pmhuw3yg0",
+                        "x-index": 0
+                      },
+                      "pc8k124vwdp": {
+                        "type": "string",
+                        "title": "排气压力",
+                        "x-decorator": "FormItem",
+                        "x-component": "Input",
+                        "x-validator": [],
+                        "x-component-props": {
+                          "addonAfter": "BAR",
+                          "placeholder": "6.3-7.3 BAR"
+                        },
+                        "x-decorator-props": {},
+                        "required": true,
+                        "x-reactions": {
+                          "dependencies": [
+                            {
+                              "property": "value",
+                              "type": "any"
+                            }
+                          ],
+                          "fulfill": {
+                            "state": {}
+                          }
+                        },
+                        "x-designable-id": "pc8k124vwdp",
+                        "x-index": 1
+                      },
+                      "m6fz2nuxqci": {
+                        "type": "string | number",
+                        "title": "有无异响",
+                        "x-decorator": "FormItem",
+                        "x-component": "Radio.Group",
+                        "enum": [
+                          {
+                            "children": [],
+                            "label": "有",
+                            "value": 1
+                          },
+                          {
+                            "children": [],
+                            "label": "无",
+                            "value": 2
+                          }
+                        ],
+                        "x-validator": [],
+                        "x-component-props": {},
+                        "x-decorator-props": {},
+                        "required": true,
+                        "default": 2,
+                        "x-reactions": {
+                          "dependencies": [
+                            {
+                              "property": "value",
+                              "type": "any"
+                            }
+                          ],
+                          "fulfill": {
+                            "state": {}
+                          }
+                        },
+                        "x-designable-id": "m6fz2nuxqci",
+                        "x-index": 2
+                      }
+                    }
+                  }
+                }
+              },
+              "0w2ky0tg3jv": {
+                "type": "string",
+                "title": "现场5S",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {},
+                "x-designable-id": "0w2ky0tg3jv",
+                "x-index": 2
+              }
+            }
+          },
+          "j5862lhh0fo": {
+            "type": "void",
+            "x-component": "Card",
+            "x-component-props": {
+              "title": "ISF 3号空压机打卡点"
+            },
+            "x-designable-id": "j5862lhh0fo",
+            "x-index": 5,
+            "properties": {
+              "ghl2h5vzm2i": {
+                "type": "string | number",
+                "title": "机组是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": "3"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "120px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "ghl2h5vzm2i",
+                "x-index": 0
+              },
+              "brhpovolsiw": {
+                "type": "void",
+                "x-component": "FormGrid",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "string | number",
+                      "source": "rtplv5qf517.j5862lhh0fo.ghl2h5vzm2i",
+                      "name": "v_pfp9kz7twlq"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.v_pfp9kz7twlq === 2}}"
+                    }
+                  }
+                },
+                "x-designable-id": "brhpovolsiw",
+                "x-index": 1,
+                "properties": {
+                  "imnkxudrx1m": {
+                    "type": "void",
+                    "x-component": "FormGrid.GridColumn",
+                    "x-validator": [],
+                    "x-component-props": {},
+                    "x-designable-id": "imnkxudrx1m",
+                    "x-index": 0,
+                    "properties": {
+                      "tbb1s2dhasm": {
+                        "type": "string",
+                        "title": "主机温度",
+                        "x-decorator": "FormItem",
+                        "x-component": "Input",
+                        "x-validator": [],
+                        "x-component-props": {
+                          "addonAfter": "℃",
+                          "placeholder": "80-93 ℃ "
+                        },
+                        "x-decorator-props": {},
+                        "required": true,
+                        "x-reactions": {
+                          "dependencies": [
+                            {
+                              "property": "value",
+                              "type": "any"
+                            }
+                          ],
+                          "fulfill": {
+                            "state": {}
+                          }
+                        },
+                        "x-designable-id": "tbb1s2dhasm",
+                        "x-index": 0
+                      },
+                      "wsvqu21p76u": {
+                        "type": "string",
+                        "title": "排气压力",
+                        "x-decorator": "FormItem",
+                        "x-component": "Input",
+                        "x-validator": [],
+                        "x-component-props": {
+                          "addonAfter": "BAR",
+                          "placeholder": "6.3-7.3 BAR"
+                        },
+                        "x-decorator-props": {},
+                        "required": true,
+                        "x-reactions": {
+                          "dependencies": [
+                            {
+                              "property": "value",
+                              "type": "any"
+                            }
+                          ],
+                          "fulfill": {
+                            "state": {}
+                          }
+                        },
+                        "x-designable-id": "wsvqu21p76u",
+                        "x-index": 1
+                      },
+                      "7b3i9w18fn3": {
+                        "type": "string | number",
+                        "title": "有无异响",
+                        "x-decorator": "FormItem",
+                        "x-component": "Radio.Group",
+                        "enum": [
+                          {
+                            "children": [],
+                            "label": "有",
+                            "value": 1
+                          },
+                          {
+                            "children": [],
+                            "label": "无",
+                            "value": 2
+                          }
+                        ],
+                        "x-validator": [],
+                        "x-component-props": {},
+                        "x-decorator-props": {},
+                        "required": true,
+                        "default": 2,
+                        "x-reactions": {
+                          "dependencies": [
+                            {
+                              "property": "value",
+                              "type": "any"
+                            }
+                          ],
+                          "fulfill": {
+                            "state": {}
+                          }
+                        },
+                        "x-designable-id": "7b3i9w18fn3",
+                        "x-index": 2
+                      }
+                    }
+                  }
+                }
+              },
+              "rl3n0gc2f86": {
+                "type": "string",
+                "title": "现场5S",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {},
+                "x-designable-id": "rl3n0gc2f86",
+                "x-index": 2
+              }
+            }
+          },
+          "luwdt4o8t9c": {
+            "type": "void",
+            "x-component": "Card",
+            "x-component-props": {
+              "title": "ISF 4号空压机打卡点"
+            },
+            "x-designable-id": "luwdt4o8t9c",
+            "x-index": 6,
+            "properties": {
+              "hr456a515hb": {
+                "type": "string | number",
+                "title": "机组是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": "3"
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "120px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "hr456a515hb",
+                "x-index": 0
+              },
+              "tidqqvw1i59": {
+                "type": "void",
+                "x-component": "FormGrid",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "string | number",
+                      "source": "rtplv5qf517.luwdt4o8t9c.hr456a515hb",
+                      "name": "v_j5akogoiec3"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.v_j5akogoiec3 === 2}}"
+                    }
+                  }
+                },
+                "x-designable-id": "tidqqvw1i59",
+                "x-index": 1,
+                "properties": {
+                  "x91jh7npe15": {
+                    "type": "void",
+                    "x-component": "FormGrid.GridColumn",
+                    "x-validator": [],
+                    "x-component-props": {},
+                    "x-designable-id": "x91jh7npe15",
+                    "x-index": 0,
+                    "properties": {
+                      "4qwy756kwpb": {
+                        "type": "string",
+                        "title": "主机温度",
+                        "x-decorator": "FormItem",
+                        "x-component": "Input",
+                        "x-validator": [],
+                        "x-component-props": {
+                          "addonAfter": "℃",
+                          "placeholder": "80-93 ℃ "
+                        },
+                        "x-decorator-props": {},
+                        "required": true,
+                        "x-reactions": {
+                          "dependencies": [
+                            {
+                              "property": "value",
+                              "type": "any"
+                            }
+                          ],
+                          "fulfill": {
+                            "state": {}
+                          }
+                        },
+                        "x-designable-id": "4qwy756kwpb",
+                        "x-index": 0
+                      },
+                      "3c0ftb7buv7": {
+                        "type": "string",
+                        "title": "排气压力",
+                        "x-decorator": "FormItem",
+                        "x-component": "Input",
+                        "x-validator": [],
+                        "x-component-props": {
+                          "addonAfter": "BAR",
+                          "placeholder": "6.3-7.3 BAR"
+                        },
+                        "x-decorator-props": {},
+                        "required": true,
+                        "x-reactions": {
+                          "dependencies": [
+                            {
+                              "property": "value",
+                              "type": "any"
+                            }
+                          ],
+                          "fulfill": {
+                            "state": {}
+                          }
+                        },
+                        "x-designable-id": "3c0ftb7buv7",
+                        "x-index": 1
+                      },
+                      "4wgsd3v37sg": {
+                        "type": "string | number",
+                        "title": "有无异响",
+                        "x-decorator": "FormItem",
+                        "x-component": "Radio.Group",
+                        "enum": [
+                          {
+                            "children": [],
+                            "label": "有",
+                            "value": 1
+                          },
+                          {
+                            "children": [],
+                            "label": "无",
+                            "value": 2
+                          }
+                        ],
+                        "x-validator": [],
+                        "x-component-props": {},
+                        "x-decorator-props": {},
+                        "required": true,
+                        "default": 2,
+                        "x-reactions": {
+                          "dependencies": [
+                            {
+                              "property": "value",
+                              "type": "any"
+                            }
+                          ],
+                          "fulfill": {
+                            "state": {
+                              "visible": "{{$deps.v_rhel9e6g7ml2 === 2}}"
+                            }
+                          }
+                        },
+                        "x-designable-id": "4wgsd3v37sg",
+                        "x-index": 2
+                      }
+                    }
+                  }
+                }
+              },
+              "1hy5k9pq9ea": {
+                "type": "string",
+                "title": "现场5S",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {},
+                "x-designable-id": "1hy5k9pq9ea",
+                "x-index": 2
+              }
+            }
+          },
+          "tsmff5ltnzt": {
+            "type": "void",
+            "x-component": "Card",
+            "x-component-props": {
+              "title": "ISF空压机循环水系统打卡点"
+            },
+            "x-designable-id": "tsmff5ltnzt",
+            "x-index": 7,
+            "properties": {
+              "eie0somenpk": {
+                "type": "string | number",
+                "title": "1号循环水泵运行状态",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": 3
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "180px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "eie0somenpk",
+                "x-index": 0
+              },
+              "w_1": {
+                "type": "void",
+                "x-component": "FormGrid",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "string | number",
+                      "source": "rtplv5qf517.tsmff5ltnzt.eie0somenpk",
+                      "name": "v_wqptt94i8sd"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.v_wqptt94i8sd === 2}}"
+                    }
+                  }
+                },
+                "x-designable-id": "dmbjsnnln1c",
+                "x-index": 1,
+                "name": "w_1",
+                "properties": {
+                  "orrijvps6ux": {
+                    "type": "void",
+                    "x-component": "FormGrid.GridColumn",
+                    "x-validator": [],
+                    "x-component-props": {},
+                    "x-reactions": {
+                      "dependencies": [
+                        {
+                          "property": "value",
+                          "type": "string | number",
+                          "source": "rtplv5qf517.tsmff5ltnzt.eie0somenpk",
+                          "name": "v_8qde29d4rad"
+                        }
+                      ],
+                      "fulfill": {
+                        "state": {
+                          "visible": "{{$deps.v_8qde29d4rad === 2}}"
+                        }
+                      }
+                    },
+                    "x-designable-id": "orrijvps6ux",
+                    "x-index": 0,
+                    "properties": {
+                      "tykp073snkc": {
+                        "type": "string",
+                        "title": "冷却水供水温度",
+                        "x-decorator": "FormItem",
+                        "x-component": "Input",
+                        "x-validator": [],
+                        "x-component-props": {
+                          "addonAfter": "℃",
+                          "placeholder": "5-40 ℃"
+                        },
+                        "x-decorator-props": {
+                          "labelWidth": "150px"
+                        },
+                        "required": true,
+                        "x-designable-id": "tykp073snkc",
+                        "x-index": 0
+                      },
+                      "x3932rm4ix1": {
+                        "type": "string",
+                        "title": "循环水出水压力",
+                        "x-decorator": "FormItem",
+                        "x-component": "Input",
+                        "x-validator": [],
+                        "x-component-props": {
+                          "addonAfter": "MPa",
+                          "placeholder": "0.2-0.5 Mpa"
+                        },
+                        "x-decorator-props": {
+                          "labelWidth": "150px"
+                        },
+                        "required": true,
+                        "x-reactions": {
+                          "dependencies": []
+                        },
+                        "x-designable-id": "x3932rm4ix1",
+                        "x-index": 1
+                      },
+                      "4ohbtt8ahbb": {
+                        "type": "string | number",
+                        "title": "有无异响",
+                        "x-decorator": "FormItem",
+                        "x-component": "Radio.Group",
+                        "enum": [
+                          {
+                            "children": [],
+                            "label": "有",
+                            "value": 1
+                          },
+                          {
+                            "children": [],
+                            "label": "无",
+                            "value": 2
+                          }
+                        ],
+                        "x-validator": [],
+                        "x-component-props": {},
+                        "x-decorator-props": {},
+                        "required": true,
+                        "default": 2,
+                        "x-reactions": {
+                          "dependencies": [
+                            {
+                              "property": "value",
+                              "type": "any"
+                            }
+                          ],
+                          "fulfill": {
+                            "state": {}
+                          }
+                        },
+                        "x-designable-id": "4ohbtt8ahbb",
+                        "x-index": 2
+                      }
+                    }
+                  }
+                }
+              },
+              "pq14lv8quj1": {
+                "type": "string | number",
+                "title": "2号循环水泵运行状态",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": 3
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "180px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "pq14lv8quj1",
+                "x-index": 2
+              },
+              "2cdlvbmrtb4": {
+                "type": "void",
+                "x-component": "FormGrid",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "string | number",
+                      "source": "rtplv5qf517.tsmff5ltnzt.pq14lv8quj1",
+                      "name": "v_fdjta9jvhn5"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.v_fdjta9jvhn5 === 2}}"
+                    }
+                  }
+                },
+                "x-designable-id": "2cdlvbmrtb4",
+                "x-index": 3,
+                "properties": {
+                  "4q8g34wj4ft": {
+                    "type": "void",
+                    "x-component": "FormGrid.GridColumn",
+                    "x-validator": [],
+                    "x-component-props": {},
+                    "x-designable-id": "4q8g34wj4ft",
+                    "x-index": 0,
+                    "properties": {
+                      "do05yxx2qd5": {
+                        "type": "string",
+                        "title": "冷却水供水温度",
+                        "x-decorator": "FormItem",
+                        "x-component": "Input",
+                        "x-validator": [],
+                        "x-component-props": {
+                          "addonAfter": "℃",
+                          "placeholder": "5-40 ℃"
+                        },
+                        "x-decorator-props": {
+                          "labelWidth": "150px"
+                        },
+                        "required": true,
+                        "x-designable-id": "do05yxx2qd5",
+                        "x-index": 0
+                      },
+                      "2xdv34wopah": {
+                        "type": "string",
+                        "title": "循环水出水压力",
+                        "x-decorator": "FormItem",
+                        "x-component": "Input",
+                        "x-validator": [],
+                        "x-component-props": {
+                          "addonAfter": "MPa",
+                          "placeholder": "0.2-0.5 Mpa"
+                        },
+                        "x-decorator-props": {
+                          "labelWidth": "150px"
+                        },
+                        "required": true,
+                        "x-designable-id": "2xdv34wopah",
+                        "x-index": 1
+                      },
+                      "anijo9ren8f": {
+                        "type": "string | number",
+                        "title": "有无异响",
+                        "x-decorator": "FormItem",
+                        "x-component": "Radio.Group",
+                        "enum": [
+                          {
+                            "children": [],
+                            "label": "有",
+                            "value": 1
+                          },
+                          {
+                            "children": [],
+                            "label": "无",
+                            "value": 2
+                          }
+                        ],
+                        "x-validator": [],
+                        "x-component-props": {},
+                        "x-decorator-props": {},
+                        "required": true,
+                        "default": 2,
+                        "x-reactions": {
+                          "dependencies": [
+                            {
+                              "property": "value",
+                              "type": "any"
+                            }
+                          ],
+                          "fulfill": {
+                            "state": {}
+                          }
+                        },
+                        "x-designable-id": "anijo9ren8f",
+                        "x-index": 2
+                      }
+                    }
+                  }
+                }
+              },
+              "py4dzlip1k8": {
+                "type": "string | number",
+                "title": "3号循环水泵运行状态",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": 3
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "180px"
+                },
+                "required": true,
+                "default": 2,
+                "x-designable-id": "py4dzlip1k8",
+                "x-index": 4
+              },
+              "z0lcu8uws88": {
+                "type": "void",
+                "x-component": "FormGrid",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-reactions": {
+                  "dependencies": [
+                    {
+                      "property": "value",
+                      "type": "string | number",
+                      "source": "rtplv5qf517.tsmff5ltnzt.py4dzlip1k8",
+                      "name": "v_cm9u3fnmyvb"
+                    }
+                  ],
+                  "fulfill": {
+                    "state": {
+                      "visible": "{{$deps.v_cm9u3fnmyvb === 2}}"
+                    }
+                  }
+                },
+                "x-designable-id": "z0lcu8uws88",
+                "x-index": 5,
+                "properties": {
+                  "qh65oo8z4lt": {
+                    "type": "void",
+                    "x-component": "FormGrid.GridColumn",
+                    "x-validator": [],
+                    "x-component-props": {},
+                    "x-designable-id": "qh65oo8z4lt",
+                    "x-index": 0,
+                    "properties": {
+                      "w2gt37kxgts": {
+                        "type": "string",
+                        "title": "冷却水供水温度",
+                        "x-decorator": "FormItem",
+                        "x-component": "Input",
+                        "x-validator": [],
+                        "x-component-props": {
+                          "addonAfter": "℃",
+                          "placeholder": "5-40 ℃"
+                        },
+                        "x-decorator-props": {
+                          "labelWidth": "150px"
+                        },
+                        "required": true,
+                        "x-designable-id": "w2gt37kxgts",
+                        "x-index": 0
+                      },
+                      "0nsls2mep52": {
+                        "type": "string",
+                        "title": "循环水出水压力",
+                        "x-decorator": "FormItem",
+                        "x-component": "Input",
+                        "x-validator": [],
+                        "x-component-props": {
+                          "addonAfter": "MPa",
+                          "placeholder": "0.2-0.5 Mpa"
+                        },
+                        "x-decorator-props": {
+                          "labelWidth": "150px"
+                        },
+                        "required": true,
+                        "x-designable-id": "0nsls2mep52",
+                        "x-index": 1
+                      },
+                      "57jbwojnv1y": {
+                        "type": "string | number",
+                        "title": "有无异响",
+                        "x-decorator": "FormItem",
+                        "x-component": "Radio.Group",
+                        "enum": [
+                          {
+                            "children": [],
+                            "label": "有",
+                            "value": 1
+                          },
+                          {
+                            "children": [],
+                            "label": "无",
+                            "value": 2
+                          }
+                        ],
+                        "x-validator": [],
+                        "x-component-props": {},
+                        "x-decorator-props": {},
+                        "required": true,
+                        "default": 2,
+                        "x-reactions": {
+                          "dependencies": [],
+                          "fulfill": {
+                            "state": {}
+                          }
+                        },
+                        "x-designable-id": "57jbwojnv1y",
+                        "x-index": 2
+                      }
+                    }
+                  }
+                }
+              },
+              "la4pbwqv9y1": {
+                "type": "string",
+                "title": "现场5S",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {},
+                "x-designable-id": "la4pbwqv9y1",
+                "x-index": 6
+              }
+            }
+          },
+          "txq5trj2hx0": {
+            "type": "void",
+            "x-component": "Card",
+            "x-component-props": {
+              "title": "ISF 系统露点打卡点"
+            },
+            "x-designable-id": "txq5trj2hx0",
+            "x-index": 8,
+            "properties": {
+              "qo90i8mqp47": {
+                "type": "string",
+                "title": "空压系统露点温度",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {
+                  "placeholder": "(-70)-(-10) ℃ "
+                },
+                "x-decorator-props": {
+                  "addonAfter": "℃ ",
+                  "labelWidth": "150px"
+                },
+                "required": true,
+                "x-designable-id": "qo90i8mqp47",
+                "x-index": 0
+              }
+            }
+          },
+          "rwbmqgqvny4": {
+            "type": "void",
+            "x-component": "Card",
+            "x-component-props": {
+              "title": "ISF 1号冷干机打卡点"
+            },
+            "x-designable-id": "rwbmqgqvny4",
+            "x-index": 9,
+            "properties": {
+              "unj7pmattaf": {
+                "type": "string | number",
+                "title": "机组是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": 3
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "120px"
+                },
+                "default": 2,
+                "required": true,
+                "x-designable-id": "unj7pmattaf",
+                "x-index": 0
+              },
+              "zslyze8v5ga": {
+                "type": "string | number",
+                "title": "有无报警",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "有",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "无",
+                    "value": 2
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {},
+                "default": 2,
+                "required": true,
+                "x-designable-id": "zslyze8v5ga",
+                "x-index": 1
+              },
+              "lsk7ks932ea": {
+                "type": "string",
+                "title": "现场5S",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {},
+                "x-designable-id": "lsk7ks932ea",
+                "x-index": 2
+              }
+            }
+          },
+          "0gys29tvlop": {
+            "type": "void",
+            "x-component": "Card",
+            "x-component-props": {
+              "title": "ISF 2号冷干机打卡点"
+            },
+            "x-designable-id": "0gys29tvlop",
+            "x-index": 10,
+            "properties": {
+              "1wigez48brs": {
+                "type": "string | number",
+                "title": "机组是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": 3
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "120px"
+                },
+                "default": 2,
+                "required": true,
+                "x-designable-id": "1wigez48brs",
+                "x-index": 0
+              },
+              "15nz7ttzaq6": {
+                "type": "string | number",
+                "title": "有无报警",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "有",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "无",
+                    "value": 2
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {},
+                "default": 2,
+                "required": true,
+                "x-designable-id": "15nz7ttzaq6",
+                "x-index": 1
+              },
+              "86dytnohhbb": {
+                "type": "string",
+                "title": "现场5S",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {},
+                "x-designable-id": "86dytnohhbb",
+                "x-index": 2
+              }
+            }
+          },
+          "gbhav76ou49": {
+            "type": "void",
+            "x-component": "Card",
+            "x-component-props": {
+              "title": "ISF 3号冷干机打卡点"
+            },
+            "x-designable-id": "gbhav76ou49",
+            "x-index": 11,
+            "properties": {
+              "t20vl9yc9x0": {
+                "type": "string | number",
+                "title": "机组是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": 3
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "120px"
+                },
+                "default": 2,
+                "required": true,
+                "x-designable-id": "t20vl9yc9x0",
+                "x-index": 0
+              },
+              "4zjoxp53srh": {
+                "type": "string | number",
+                "title": "有无报警",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "有",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "无",
+                    "value": 2
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {},
+                "default": 2,
+                "required": true,
+                "x-designable-id": "4zjoxp53srh",
+                "x-index": 1
+              },
+              "3tgonz34fd1": {
+                "type": "string",
+                "title": "现场5S",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {},
+                "x-designable-id": "3tgonz34fd1",
+                "x-index": 2
+              }
+            }
+          },
+          "gshxpipzv6x": {
+            "type": "void",
+            "x-component": "Card",
+            "x-component-props": {
+              "title": "ISF 4号冷干机打卡点"
+            },
+            "x-designable-id": "gshxpipzv6x",
+            "x-index": 12,
+            "properties": {
+              "weatp06ag7h": {
+                "type": "string | number",
+                "title": "机组是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": 3
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "120px"
+                },
+                "default": 2,
+                "required": true,
+                "x-designable-id": "weatp06ag7h",
+                "x-index": 0
+              },
+              "mdt2nt3chhr": {
+                "type": "string | number",
+                "title": "有无报警",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "有",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "无",
+                    "value": 2
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {},
+                "default": 2,
+                "required": true,
+                "x-designable-id": "mdt2nt3chhr",
+                "x-index": 1
+              },
+              "hp3xwwbdvkl": {
+                "type": "string",
+                "title": "现场5S",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {},
+                "x-designable-id": "hp3xwwbdvkl",
+                "x-index": 2
+              }
+            }
+          },
+          "kkuycb0yqm9": {
+            "type": "void",
+            "x-component": "Card",
+            "x-component-props": {
+              "title": "ISF-1号制冷机打卡点"
+            },
+            "x-designable-id": "kkuycb0yqm9",
+            "x-index": 13,
+            "properties": {
+              "j0rbei922ah": {
+                "type": "string | number",
+                "title": "机组是否运行",
+                "x-decorator": "FormItem",
+                "x-component": "Radio.Group",
+                "enum": [
+                  {
+                    "children": [],
+                    "label": "停止",
+                    "value": 1
+                  },
+                  {
+                    "children": [],
+                    "label": "运行",
+                    "value": 2
+                  },
+                  {
+                    "children": [],
+                    "label": "维修中",
+                    "value": 3
+                  }
+                ],
+                "x-validator": [],
+                "x-component-props": {},
+                "x-decorator-props": {
+                  "labelWidth": "120px"
+                },
+                "default": 2,
+                "required": true,
+                "x-designable-id": "j0rbei922ah",
+                "x-index": 0
+              },
+              "wb4poy34gno": {
+                "type": "void",
+                "x-component": "FormGrid",
+                "x-validator": [],
+                "x-component-props": {
+                  "maxColumns": null
+                },
+                "x-designable-id": "wb4poy34gno",
+                "x-index": 1,
+                "properties": {
+                  "r921h419mxr": {
+                    "type": "void",
+                    "x-component": "FormGrid.GridColumn",
+                    "x-validator": [],
+                    "x-component-props": {},
+                    "x-designable-id": "r921h419mxr",
+                    "x-index": 0,
+                    "properties": {
+                      "fh51x98jj8r": {
+                        "type": "string",
+                        "title": "冷冻水出水温度",
+                        "x-decorator": "FormItem",
+                        "x-component": "Input",
+                        "x-validator": [],
+                        "x-component-props": {
+                          "placeholder": "5-12 ℃",
+                          "addonAfter": "℃"
+                        },
+                        "x-decorator-props": {
+                          "labelWidth": "150px"
+                        },
+                        "required": true,
+                        "x-designable-id": "fh51x98jj8r",
+                        "x-index": 0
+                      },
+                      "s7rzvlr1zgm": {
+                        "type": "string",
+                        "title": "冷冻水回水温度",
+                        "x-decorator": "FormItem",
+                        "x-component": "Input",
+                        "x-validator": [],
+                        "x-component-props": {
+                          "placeholder": "10-17 ℃",
+                          "addonAfter": "℃"
+                        },
+                        "x-decorator-props": {
+                          "labelWidth": "150px"
+                        },
+                        "required": true,
+                        "x-designable-id": "s7rzvlr1zgm",
+                        "x-index": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "x-designable-id": "cirm8sh68dn"
+  }
+}

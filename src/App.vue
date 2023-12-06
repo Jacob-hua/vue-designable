@@ -1,12 +1,55 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <el-container>
+      <el-aside width="200px">
+        <nav>
+          <router-link to="/formDesigner/preview">Preview</router-link>
+          <br />
+          <router-link to="/formDesigner">Designable</router-link>
+        </nav>
+      </el-aside>
+      <el-main>
+        <el-container>
+          <el-main>
+            <div id="react-app"
+            ></div>
+          </el-main>
+        </el-container>
+      </el-main>
+    </el-container>
   </div>
 </template>
+
+<script>
+const debounce = (fn, delay) => {
+  let timer = null
+
+  return function () {
+    const context = this
+
+    const args = arguments
+
+    clearTimeout(timer)
+
+    timer = setTimeout(function () {
+      fn.apply(context, args)
+    }, delay)
+  }
+}
+
+const _ResizeObserver = window.ResizeObserver
+
+window.ResizeObserver = class ResizeObserver extends _ResizeObserver {
+  constructor (callback) {
+    callback = debounce(callback, 16)
+
+    super(callback)
+  }
+}
+export default {
+  name: 'App'
+}
+</script>
 
 <style lang="scss">
 #app {
@@ -16,17 +59,21 @@
   text-align: center;
   color: #2c3e50;
 }
+</style>
 
-nav {
-  padding: 30px;
+<style lang="scss" scoped>
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+#react-app {
+ width: 100%;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
+.el-aside {
+    width: 10vw;
+  }
+
+  .el-main {
+    .el-container {
+      height: 93vh;
     }
   }
-}
 </style>

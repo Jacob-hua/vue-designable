@@ -21,7 +21,9 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  base: '/',
+  mode: 'history'
 })
 
 export default router
